@@ -12,7 +12,7 @@ export function ServicesGrid({ services }: { services: Service[] }) {
         <StaggerItem key={service.slug} className="bg-ink-950">
           <Link
             href={`/services/${service.slug}`}
-            className="group relative flex h-full flex-col p-7 transition-colors duration-300 hover:bg-ink-900 lg:p-8"
+            className="spotlight group relative flex h-full flex-col p-7 transition-colors duration-300 hover:bg-ink-900 lg:p-8"
           >
             <span
               aria-hidden="true"

@@ -1,4 +1,4 @@
-# Northbridge Systems — corporate IT company website
+# Devcura — corporate IT company website
 
 A production-grade, fully dynamic marketing and content platform for a software
 engineering company: 17 public routes, a database-backed content layer, a
@@ -110,8 +110,8 @@ psql --version
 Run every command below **from the project root**.
 
 ```bash
-git clone <your-repository-url> northbridge-site
-cd northbridge-site
+git clone <your-repository-url> devcura-site
+cd devcura-site
 npm install
 ```
 
@@ -231,8 +231,8 @@ sudo apt install -y nodejs
 sudo npm install -g pm2
 
 # 2. Deploy the code
-git clone <your-repository-url> /var/www/northbridge
-cd /var/www/northbridge
+git clone <your-repository-url> /var/www/devcura
+cd /var/www/devcura
 npm ci
 cp .env.example .env && nano .env          # fill in real values
 
@@ -242,11 +242,11 @@ npx tsx src/db/seed.ts
 
 # 4. Build and run
 npm run build
-pm2 start npm --name northbridge -- run start
+pm2 start npm --name devcura -- run start
 pm2 save && pm2 startup
 ```
 
-Minimal nginx reverse proxy (`/etc/nginx/sites-available/northbridge`):
+Minimal nginx reverse proxy (`/etc/nginx/sites-available/devcura`):
 
 ```nginx
 server {
@@ -265,7 +265,7 @@ server {
 ```
 
 ```bash
-sudo ln -s /etc/nginx/sites-available/northbridge /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/devcura /etc/nginx/sites-enabled/
 sudo nginx -t && sudo systemctl reload nginx
 sudo certbot --nginx -d example.com -d www.example.com   # TLS
 ```

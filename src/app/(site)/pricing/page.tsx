@@ -46,7 +46,7 @@ export default function PricingPage() {
                 )}
               >
                 {model.highlighted ? (
-                  <span className="absolute right-0 top-0 bg-accent-500 px-3 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.12em] text-ink-950">
+                  <span className="absolute right-0 top-0 bg-accent-500 px-3 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.12em] text-white">
                     Most common
                   </span>
                 ) : null}

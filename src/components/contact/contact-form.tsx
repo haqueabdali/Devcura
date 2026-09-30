@@ -260,7 +260,7 @@ export function ContactForm({
           required
           disabled={busy}
           aria-invalid={Boolean(errors.consent)}
-          className="mt-1 size-4 shrink-0 accent-[#2bb3a3]"
+          className="mt-1 size-4 shrink-0 accent-[#3b82f6]"
         />
         <label htmlFor="consent" className="text-[0.82rem] leading-relaxed text-ink-400">
           I agree that my details may be stored and used to respond to this enquiry, as

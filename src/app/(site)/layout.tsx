@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { CtaBand } from "@/components/layout/cta-band";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
+import { ScrollEffects } from "@/components/ui/scroll-effects";
 import { JsonLd } from "@/components/ui/json-ld";
 import { getIndustries, getServices } from "@/services/content";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
@@ -24,6 +25,7 @@ export default async function SiteLayout({ children }: { children: ReactNode }) 
 
   return (
     <>
+      <ScrollEffects />
       <JsonLd data={[organizationSchema(), websiteSchema()]} />
       <Navbar serviceItems={serviceItems} industryItems={industryItems} />
       <main id="main">{children}</main>
