@@ -1,0 +1,232 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Design System — Northbridge Systems (placeholder brand)
+   Foundation: deep navy / ink / paper  +  a single sophisticated accent
+   ------------------------------------------------------------------ */
+@theme {
+  --color-ink-950: #05080f;
+  --color-ink-900: #080d18;
+  --color-ink-850: #0b1220;
+  --color-ink-800: #101a2c;
+  --color-ink-700: #1b2740;
+  --color-ink-600: #2a3853;
+  --color-ink-500: #45536f;
+  --color-ink-400: #6b7893;
+  --color-ink-300: #9aa4ba;
+  --color-ink-200: #c7cedd;
+  --color-ink-100: #e5e9f0;
+  --color-ink-50: #f5f7fa;
+
+  /* Single accent: a restrained teal-cyan used sparingly */
+  --color-accent-500: #1f9c8f;
+  --color-accent-400: #2bb3a3;
+  --color-accent-300: #5ccabd;
+  --color-accent-600: #16756c;
+
+  --font-sans:
+    var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+  --font-display:
+    var(--font-display), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 0.5rem;
+
+  --animate-marquee: marquee 38s linear infinite;
+  --animate-pulse-slow: pulseSlow 6s ease-in-out infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes pulseSlow {
+    0%,
+    100% {
+      opacity: 0.35;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+}
+
+@layer base {
+  * {
+    border-color: color-mix(in oklab, var(--color-ink-700) 40%, transparent);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-ink-950);
+    color: var(--color-ink-100);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.022em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--color-accent-500);
+    color: #04100f;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-400);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Thin, dark scrollbar that matches the theme */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-ink-700) transparent;
+  }
+}
+
+@layer components {
+  .container-page {
+    width: 100%;
+    margin-inline: auto;
+    max-width: 88rem;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-page {
+      padding-inline: 2rem;
+    }
+  }
+  @media (min-width: 1536px) {
+    .container-page {
+      padding-inline: 3rem;
+    }
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-accent-300);
+  }
+
+  .hairline {
+    border-top: 1px solid
+      color-mix(in oklab, var(--color-ink-600) 45%, transparent);
+  }
+
+  .surface {
+    background: color-mix(in oklab, var(--color-ink-900) 88%, transparent);
+    border: 1px solid color-mix(in oklab, var(--color-ink-700) 55%, transparent);
+  }
+
+  .grid-lines {
+    background-image:
+      linear-gradient(
+        to right,
+        color-mix(in oklab, var(--color-ink-700) 32%, transparent) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        color-mix(in oklab, var(--color-ink-700) 32%, transparent) 1px,
+        transparent 1px
+      );
+    background-size: 72px 72px;
+  }
+
+  .link-underline {
+    background-image: linear-gradient(
+      currentColor,
+      currentColor
+    );
+    background-size: 0% 1px;
+    background-repeat: no-repeat;
+    background-position: left 100%;
+    transition: background-size 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-underline:hover {
+    background-size: 100% 1px;
+  }
+
+  .prose-article {
+    color: var(--color-ink-200);
+    font-size: 1.0625rem;
+    line-height: 1.85;
+  }
+  .prose-article h2 {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-top: 2.75rem;
+    margin-bottom: 0.9rem;
+    line-height: 1.25;
+  }
+  .prose-article h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 0.6rem;
+  }
+  .prose-article p {
+    margin-bottom: 1.25rem;
+  }
+  .prose-article ul {
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+    list-style: none;
+  }
+  .prose-article li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin-bottom: 0.6rem;
+  }
+  .prose-article li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
+    width: 0.4rem;
+    height: 1px;
+    background: var(--color-accent-400);
+  }
+  .prose-article strong {
+    color: #fff;
+    font-weight: 600;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
