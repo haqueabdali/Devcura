@@ -5,19 +5,19 @@
  */
 
 export const siteConfig = {
-  name: process.env.NEXT_PUBLIC_SITE_NAME ?? "Northbridge Systems", // [PLACEHOLDER company name]
-  legalName: "Northbridge Systems Ltd.", // [PLACEHOLDER legal entity]
-  shortName: "Northbridge",
+  name: process.env.NEXT_PUBLIC_SITE_NAME ?? "Devcura", // [PLACEHOLDER company name]
+  legalName: "Devcura Technologies Ltd.", // [PLACEHOLDER legal entity]
+  shortName: "Devcura",
   tagline: "Engineering software that compounds business value",
   description:
-    "Northbridge Systems is a software engineering partner for companies that depend on their technology. We design, build and operate platforms, data systems and AI-assisted products for regulated and high-growth industries.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.example-northbridge.com", // [PLACEHOLDER domain]
+    "Devcura is a software engineering partner for companies that depend on their technology. We design, build and operate platforms, data systems and AI-assisted products for regulated and high-growth industries.",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.example-devcura.com", // [PLACEHOLDER domain]
   locale: "en_US",
   founded: 2014,
   contact: {
-    email: process.env.CONTACT_EMAIL ?? "hello@example-northbridge.com", // [PLACEHOLDER]
-    salesEmail: "newbusiness@example-northbridge.com", // [PLACEHOLDER]
-    careersEmail: "careers@example-northbridge.com", // [PLACEHOLDER]
+    email: process.env.CONTACT_EMAIL ?? "hello@example-devcura.com", // [PLACEHOLDER]
+    salesEmail: "newbusiness@example-devcura.com", // [PLACEHOLDER]
+    careersEmail: "careers@example-devcura.com", // [PLACEHOLDER]
     phone: "+1 (555) 014-2200", // [PLACEHOLDER]
     phoneHref: "+15550142200",
     hours: "Mon–Fri · 09:00–18:00 (CET) · Support 24/7 for managed clients",

@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Activity, CircleCheck, GitBranch, ShieldCheck } from "lucide-react";
 
 import { ButtonLink } from "@/components/ui/button";
+import { LiveMetric } from "@/components/home/live-metric";
 import { NetworkCanvas } from "@/components/home/network-canvas";
 import { TypedHeadline } from "@/components/home/typed-headline";
 import { primaryCta, secondaryCta } from "@/config/site";
@@ -74,7 +75,7 @@ export function Hero({
               className="mt-7 text-[2.4rem] font-semibold leading-[1.06] text-white sm:text-[3.1rem] lg:text-[3.4rem] xl:text-[3.8rem]"
             >
               Engineering the systems your{" "}
-              <span className="relative block min-h-[1.1em] text-accent-300">
+              <span className="text-gradient relative block min-h-[1.1em]">
                 <TypedHeadline phrases={phrases} />
               </span>
             </motion.h1>
@@ -139,7 +140,7 @@ export function Hero({
                     <span className="size-2 rounded-full bg-accent-500/70" />
                   </div>
                   <p className="font-mono text-[0.68rem] tracking-wide text-ink-500">
-                    delivery-pipeline · production
+                    devcura/delivery-pipeline · production
                   </p>
                 </div>
 
@@ -170,7 +171,7 @@ export function Hero({
                         </span>
                       </div>
                       <span className="hidden truncate font-mono text-[0.72rem] text-ink-500 sm:block">
-                        {line.detail}
+                        {line.status === "run" ? <LiveMetric /> : line.detail}
                       </span>
                     </motion.div>
                   ))}

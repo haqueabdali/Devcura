@@ -12,7 +12,7 @@ const base =
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-accent-500 text-ink-950 hover:bg-accent-400 shadow-[0_1px_0_0_rgba(255,255,255,0.12)_inset]",
+    "bg-accent-500 text-white hover:bg-accent-400 shadow-[0_0_0_0_rgba(59,130,246,0)] hover:shadow-[0_0_28px_-4px_rgba(59,130,246,0.7)]",
   secondary: "bg-white text-ink-950 hover:bg-ink-100",
   outline:
     "border border-ink-600 text-ink-100 hover:border-accent-400 hover:text-white bg-transparent",

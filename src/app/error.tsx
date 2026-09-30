@@ -37,7 +37,7 @@ export default function GlobalError({
             <button
               type="button"
               onClick={reset}
-              className="h-11 bg-accent-500 px-5 text-[0.9rem] font-medium text-ink-950 transition-colors hover:bg-accent-400"
+              className="h-11 bg-accent-500 px-5 text-[0.9rem] font-medium text-white transition-colors hover:bg-accent-400"
             >
               Try again
             </button>
